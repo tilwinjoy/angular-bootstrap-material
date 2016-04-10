@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+
+</head>
+
+<body ng-app="angularBootstrapMaterial" ng-controller="testCtrl">
+<form name="testForm">
+        <abm-form-group label="success!" placeholder="yay!" error="true">
+            <abm-input ng-model="user.name" required></abm-input>
+        </abm-form-group>
+        <abm-form-group label="another!" placeholder="wow!" error="true">
+            <abm-input ng-model="user.email" required></abm-input>
+        </abm-form-group>
+    </form>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/form-group.js"></script>
+    <script src="scripts/input.js"></script>
+    <script src="scripts/label.js"></script>
+
+</body>
+
+</html>
