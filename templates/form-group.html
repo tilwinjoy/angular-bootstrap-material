@@ -1,0 +1,8 @@
+<div class="form-group" class="label-floating" ng-class="{{classList}}">
+    <label for="{{'input_'+ formControl.$id}}" class="control-label">{{label}}</label>
+    <input type="text">
+    <div ng-if="error" ng-messages="">
+        <p ng-message="required" class="">{{name}} Something is wrong!</p>
+    </div>
+    <p class=""></p>
+</div>
