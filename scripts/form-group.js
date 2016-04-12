@@ -5,7 +5,7 @@ angular.module('angularBootstrapMaterial')
                 classList: '=',
                 label: '@',
                 placeholder: '@',
-                error: '='
+                errorMessages: '='
             },
             replace: true,
             transclude: {
@@ -15,7 +15,7 @@ angular.module('angularBootstrapMaterial')
             templateUrl: 'templates/form-group.html',
             controller: function ($scope, $element) {
                 $scope.formControl = null;
-                $scope.name = 'fg_' + $scope.$id;
+                $scope.showErrors = !!$scope.errorMessages;
                 this.toggleFocus = function (state) {
                     $element.toggleClass("is-focused", state);
                 };
@@ -39,6 +39,7 @@ angular.module('angularBootstrapMaterial')
                         element.find('input').replaceWith(clone);
                     }, null, 'input');
                 }
+                console.log(transclude())
             }
         }
     });
