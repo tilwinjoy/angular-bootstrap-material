@@ -28,20 +28,21 @@
 
 <body ng-app="angularBootstrapMaterial" ng-controller="testCtrl">
     <form name="testForm">
-        <abm-form-group label="success!" placeholder="yay!" error-messages="false">
+        <abm-form-group label="success!" placeholder="yay!" error-messages="{required:'hello'}">
             <abm-input ng-model="user.name" required></abm-input>
         </abm-form-group>
-        <abm-form-group label="another!" placeholder="wow!" error-messages="true">
-            <abm-input ng-model="user.email" required></abm-input>
+        <abm-form-group label="another!" placeholder="wow!" error-messages-include="errors.html">
+            <abm-input type="email" ng-model="user.email" required ng-minlength="10"></abm-input>
         </abm-form-group>
     </form>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="scripts/index.js"></script>
-    <script src="scripts/services.js"></script>
-    <script src="scripts/form-group.js"></script>
-    <script src="scripts/input.js"></script>
-    <script src="scripts/label.js"></script>
+    <script src="scripts/services/abmCongif.js"></script>
+    <script src="scripts/services/isChar.js"></script>
+    <script src="scripts/directives/form-group.js"></script>
+    <script src="scripts/directives/input.js"></script>
+    <script src="scripts/directives/label.js"></script>
     <script type="text/ng-template" id="errors.html">
         <div ng-message="required" class="help-block">This is required but not really</div>
     </script>
