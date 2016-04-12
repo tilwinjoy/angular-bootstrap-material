@@ -1,8 +1,11 @@
-<div class="form-group" class="label-floating" ng-class="{{classList}}">
+<div class="form-group label-floating" ng-class="{{classList}}" ng-form="fg_{{$id}}">
     <label for="{{'input_'+ formControl.$id}}" class="control-label">{{label}}</label>
     <input type="text">
-    <div ng-if="error" ng-messages="">
-        <p ng-message="required" class="">{{name}} Something is wrong!</p>
+    <div ng-show="showErrors" ng-messages="this['fg_'+$id].$error">
+        <div ng-repeat="(type, message) in errorMessages">
+            <!-- use ng-message-exp for a message whose key is given by an expression -->
+            <div ng-message-exp="type" class="help-block">{{message}}</div>
+        </div>
+        <div ng-messages-include="errors.html"></div>
     </div>
-    <p class=""></p>
 </div>

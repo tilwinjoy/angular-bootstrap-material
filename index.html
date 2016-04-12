@@ -27,11 +27,11 @@
 </head>
 
 <body ng-app="angularBootstrapMaterial" ng-controller="testCtrl">
-<form name="testForm">
-        <abm-form-group label="success!" placeholder="yay!" error="true">
+    <form name="testForm">
+        <abm-form-group label="success!" placeholder="yay!" error-messages="false">
             <abm-input ng-model="user.name" required></abm-input>
         </abm-form-group>
-        <abm-form-group label="another!" placeholder="wow!" error="true">
+        <abm-form-group label="another!" placeholder="wow!" error-messages="true">
             <abm-input ng-model="user.email" required></abm-input>
         </abm-form-group>
     </form>
@@ -42,6 +42,9 @@
     <script src="scripts/form-group.js"></script>
     <script src="scripts/input.js"></script>
     <script src="scripts/label.js"></script>
+    <script type="text/ng-template" id="errors.html">
+        <div ng-message="required" class="help-block">This is required but not really</div>
+    </script>
 
 </body>
 
