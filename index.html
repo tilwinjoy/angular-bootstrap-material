@@ -28,11 +28,53 @@
 
 <body ng-app="angularBootstrapMaterial" ng-controller="testCtrl">
     <form name="testForm">
-        <abm-form-group label="success!" placeholder="yay!" error-messages="{required:'hello'}">
-            <abm-input ng-model="user.name" required></abm-input>
+        <abm-form-group error-messages="{required:'hello'}">
+            <label data-abm-label>Static label</label>
+            <input type="text" class="form-control" ng-model="user.name" abm-form-control required>
         </abm-form-group>
-        <abm-form-group label="another!" placeholder="wow!" error-messages-include="errors.html">
-            <abm-input type="email" ng-model="user.email" required ng-minlength="10"></abm-input>
+        <abm-form-group error-messages-include="errors.html">
+            <label data-abm-label type="floating">Floating label</label>
+            <input type="email" abm-form-control ng-model="user.email" required ng-minlength="10">
+        </abm-form-group>
+        <abm-form-group error-messages-include="errors.html">
+            <input type="email" abm-form-control ng-model="user.email" required ng-minlength="10">
+        </abm-form-group>
+        <abm-form-group error-messages-include="errors.html">
+            <label data-abm-label type="floating">Floating user summary</label>
+            <textarea abm-form-control ng-model="user.summary" required ng-minlength="100"></textarea>
+        </abm-form-group>
+        <abm-form-group error-messages-include="errors.html">
+            <label>Checkbox group!</label>
+            <div class="checkbox" abm-checkbox label="checkbox!">
+                <input type="checkbox" ng-model="user.email" required ng-minlength="10">
+            </div>
+            <div class="checkbox" abm-checkbox label="checkbox!">
+                <input type="checkbox" ng-model="user.email" required ng-minlength="10">
+            </div>
+        </abm-form-group>
+        <div class="checkbox" abm-checkbox label="checkbox!">
+            <input type="checkbox" ng-model="user.email" required ng-minlength="10">
+        </div>
+        <abm-form-group error-messages-include="errors.html">
+            <label>Radio group!</label>
+            <div class="radio" abm-radio label="radio!">
+                <input type="radio" name="radios" ng-model="user.email" required ng-minlength="10">
+            </div>
+            <div class="radio" abm-radio label="radio!">
+                <input type="radio" name="radios" ng-model="user.email" required ng-minlength="10">
+            </div>
+        </abm-form-group>
+        <abm-form-group error-messages-include="errors.html">
+            <label for="select111" data-abm-label class="col-xs-2 control-label">Select</label>
+            <div class="col-xs-10">
+                <select id="select111" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
         </abm-form-group>
     </form>
     <script src="bower_components/angular/angular.js"></script>
@@ -41,8 +83,10 @@
     <script src="scripts/services/abmCongif.js"></script>
     <script src="scripts/services/isChar.js"></script>
     <script src="scripts/directives/form-group.js"></script>
-    <script src="scripts/directives/input.js"></script>
-    <script src="scripts/directives/label.js"></script>
+    <script src="scripts/directives/form-control.js"></script>
+    <script src="scripts/directives/control-label.js"></script>
+    <script src="scripts/directives/checkbox.js"></script>
+    <script src="scripts/directives/radio.js"></script>
     <script type="text/ng-template" id="errors.html">
         <div ng-message="required" class="help-block">This is required but not really</div>
     </script>
