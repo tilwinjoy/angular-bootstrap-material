@@ -7,7 +7,10 @@ var gulp = require('gulp'),
 gulp.task('cache-templates', function () {
     return gulp.src('templates/**/*.html')
         .pipe(templateCache({
-            module: 'angularBootstrapMaterial'
+            module: 'angularBootstrapMaterial',
+            transformUrl: function (url) {
+                return 'templates/' + url;
+            }
         }))
         .pipe(gulp.dest('scripts/'));
 });
