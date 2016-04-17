@@ -6,7 +6,9 @@ var gulp = require('gulp'),
 
 gulp.task('cache-templates', function () {
     return gulp.src('templates/**/*.html')
-        .pipe(templateCache())
+        .pipe(templateCache({
+            module: 'angularBootstrapMaterial'
+        }))
         .pipe(gulp.dest('scripts/'));
 });
 gulp.task('default', ['cache-templates'], function () {
