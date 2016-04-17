@@ -1,10 +1,16 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    templateCache = require('gulp-angular-templatecache');;
 
-gulp.task('default', function () {
-    gulp.src('scripts/**/*.js')
+gulp.task('cache-templates', function () {
+    return gulp.src('templates/**/*.html')
+        .pipe(templateCache())
+        .pipe(gulp.dest('scripts/'));
+});
+gulp.task('default', ['cache-templates'], function () {
+    return gulp.src('scripts/**/*.js')
         .pipe(concat('angular-bootstrap-material.js'))
         .pipe(gulp.dest('dist/'))
         .pipe(rename('angular-bootstrap-material.min.js'))
