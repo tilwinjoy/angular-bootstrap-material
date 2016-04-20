@@ -1,5 +1,5 @@
 angular.module('angularBootstrapMaterial')
-    .directive('abmCheckbox', function(abmConfig) {
+    .directive('abmCheckbox', ['ripple', function(ripple) {
         return {
             scope: {
                 label: '@'
@@ -12,4 +12,4 @@ angular.module('angularBootstrapMaterial')
                 }, null);
             }
         }
-    });
+    }]);
