@@ -1,25 +1,33 @@
 angular.module('angularBootstrapMaterial', ['ngMessages']);
-angular.module("angularBootstrapMaterial").run(["$templateCache", function($templateCache) {$templateCache.put("templates/checkbox.html","<label>\n    <abm-transclude-slot-checkbox></abm-transclude-slot-checkbox>\n    <span class=\"checkbox-material\">\n        <span class=\"check\"></span>\n    </span> {{label}}\n</label>");
-$templateCache.put("templates/form-group.html","<div class=\"form-group\" ng-class=\"{{classList}}\" ng-form=\"fg_{{$id}}\">\n    <abm-transclude-slot></abm-transclude-slot>\n    <div ng-show=\"showErrors\" ng-messages=\"this[\'fg_\'+$id].$error\" ng-messages-multiple>\n        <div ng-if=\"errorMessagesInclude\" ng-messages-include=\"{{errorMessagesInclude}}\"></div>\n        <div ng-repeat=\"(key,value) in errorMessageMap\">\n            <!-- use ng-message-exp for a message whose key is given by an expression -->\n            <div ng-message-exp=\"key\" class=\"help-block\">{{value}}</div>\n        </div>\n    </div>\n</div>");
+angular.module("angularBootstrapMaterial").run(["$templateCache", function($templateCache) {$templateCache.put("templates/checkbox.html","<label>\r\n    <abm-transclude-slot-checkbox></abm-transclude-slot-checkbox>\r\n    <span class=\"checkbox-material\">\r\n        <span class=\"check\"></span>\r\n    </span> {{label}}\r\n</label>");
+$templateCache.put("templates/form-group.html","<div class=\"form-group\" ng-class=\"{{classList}}\" ng-form=\"fg_{{$id}}\">\r\n    <abm-transclude-slot></abm-transclude-slot>\r\n    <div ng-show=\"showErrors\" ng-messages=\"this[\'fg_\'+$id].$error\" ng-messages-multiple>\r\n        <div ng-if=\"errorMessagesInclude\" ng-messages-include=\"{{errorMessagesInclude}}\"></div>\r\n        <div ng-repeat=\"(key,value) in errorMessageMap\">\r\n            <!-- use ng-message-exp for a message whose key is given by an expression -->\r\n            <div ng-message-exp=\"key\" class=\"help-block\">{{value}}</div>\r\n        </div>\r\n    </div>\r\n</div>");
 $templateCache.put("templates/input.html","<input id=\"input_{{$id}}\" name=\"input_{{$id}}\" class=\"form-control\">");
 $templateCache.put("templates/label.html","<label for=\"{{\'input_\'+ formControl.$id}}\" class=\"control-label\">{{label}}</label>");
-$templateCache.put("templates/radio.html","<label>\n    <abm-transclude-slot-radio></abm-transclude-slot-radio>\n    <span class=\"circle\"></span><span class=\"check\"></span> {{label}}\n</label>");
-$templateCache.put("templates/toggle.html","<label>\n    {{label}}\n    <abm-transclude-slot-toggle></abm-transclude-slot-toggle>\n    <span class=\"toggle\"></span>\n</label>");}]);
+$templateCache.put("templates/radio.html","<label>\r\n    <abm-transclude-slot-radio></abm-transclude-slot-radio>\r\n    <span class=\"circle\"></span><span class=\"check\"></span> {{label}}\r\n</label>");
+$templateCache.put("templates/toggle.html","<label>\r\n    {{label}}\r\n    <abm-transclude-slot-toggle></abm-transclude-slot-toggle>\r\n    <span class=\"toggle\"></span>\r\n</label>");}]);
 angular.module('angularBootstrapMaterial')
-    .directive('abmCheckbox', function(abmConfig) {
+    .directive('abmCheckbox', ['ripple', function (ripple) {
         return {
             scope: {
                 label: '@'
             },
             transclude: true,
-            templateUrl: 'templates/checkbox.html',
-            link: function(scope, element, attrs, ctrl, transclude) {
-                transclude(function(clone, scope) {
+            require: ['?abmFormGroup'],
+            templateUrl: templates / checkbox.html ',
+            link: function (scope, element, attrs, ctrl, transclude) {
+                transclude(function (clone, scope) {
                     element.find('abm-transclude-slot-checkbox').replaceWith(clone);
                 }, null);
+                if (ctrl) {
+                    var $input = element.find('input');
+                    element.find('label').on('mouseentr mouseleave'function (event) {
+                        if ($input.prop('disabled')) return;
+                        ctrl.toggleFocusClass(event.type == 'mouseenter');
+                    });
+                }
             }
         }
-    });
+    }]);
 angular.module('angularBootstrapMaterial')
     .directive('abmLabel', function($compile) {
         return {

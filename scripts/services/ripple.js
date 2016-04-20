@@ -1,4 +1,4 @@
-angular.module('angularBootstrapMaterial').factory('ripple', function() {
+angular.module('angularBootstrapMaterial').factory('ripple', function () {
 
 
     /**
@@ -140,11 +140,11 @@ angular.module('angularBootstrapMaterial').factory('ripple', function() {
         } else {
             $ripple.animate({
                 opacity: 0
-            }, 100, function() {
+            }, 100, function () {
                 $ripple.trigger('transitionend');
             });
         }
-        $ripple.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+        $ripple.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function () {
             $ripple.remove();
         });
     };
@@ -172,16 +172,16 @@ angular.module('angularBootstrapMaterial').factory('ripple', function() {
                 "margin-left": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
                 "margin-top": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
                 "opacity": 0.2
-            }, 500, function() {
+            }, 500, function () {
                 $ripple.trigger("transitionend");
             });
         }
     };
 
 
-    return function($element) {
+    return function ($element) {
         var element = $element[0]
-        $element.on("mousedown touchstart", function(event) {
+        $element.on("mousedown touchstart", function (event) {
             /**
              * Verify if the user is just touching on a device and return if so
              */
@@ -247,7 +247,7 @@ angular.module('angularBootstrapMaterial').factory('ripple', function() {
             /**
              * Make sure the ripple has the styles applied (ugly hack but it works)
              */
-            (function() {
+            (function () {
                 return window.getComputedStyle($ripple[0]).opacity;
             })();
 
@@ -260,7 +260,7 @@ angular.module('angularBootstrapMaterial').factory('ripple', function() {
             /**
              * Detect when the user leaves the element
              */
-            $element.on('mouseup mouseleave touchend', function() {
+            $element.on('mouseup mouseleave touchend', function () {
                 $ripple.data('mousedown', 'off');
 
                 if ($ripple.data('animating') === 'off') {
