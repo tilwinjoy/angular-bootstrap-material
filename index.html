@@ -1,98 +1,204 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Bootstrap Material Design for Angular by tilwinjoy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <!-- Material Design fonts -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <title>AngularBootstrap Material</title>
 
-    <!-- Bootstrap Material Design -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.min.css">
-    <!-- TBD: Add ripples support -->
-    <!--link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css"-->
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- Bootstrap Material Design -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
-<body ng-app="angularBootstrapMaterial">
-    <section class="page-header">
-        <h1 class="project-name">Bootstrap Material Design for Angular</h1>
-        <h2 class="project-tagline">AngularJS directives for creating material design style bootstrap components</h2>
-        <a href="http://github.com/tilwinjoy/angular-bootstrap-material" class="btn">View on GitHub</a>
-        <a href="http://github.com/tilwinjoy/angular-bootstrap-material/zipball/master" class="btn">Download .zip</a>
-        <a href="http://github.com/tilwinjoy/angular-bootstrap-material/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<body>
 
-    <section class="main-content">
-        <h3>Input</h3>
-        <form name="testForm">
-            <abm-form-group>
-                <label data-abm-label>Static label</label>
-                <input type="text" class="form-control" abm-form-control>
-            </abm-form-group>
-            <abm-form-group>
-                <label data-abm-label type="floating">Floating label</label>
-                <input type="text" abm-form-control ng-model="user.email" required ng-minlength="10">
-            </abm-form-group>
-            <abm-form-group>
-                <input type="email" abm-form-control ng-model="user.email" required ng-minlength="10">
-            </abm-form-group>
-            <abm-form-group error-messages-include="errors.html">
-                <label data-abm-label type="floating">Floating user summary</label>
-                <textarea abm-form-control ng-model="user.summary" required ng-minlength="100"></textarea>
-            </abm-form-group>
-            <abm-form-group error-messages-include="errors.html">
-                <label>Checkbox group!</label>
-                <div class="checkbox" abm-checkbox label="checkbox!">
-                    <input type="checkbox" ng-model="user.email" required ng-minlength="10">
-                </div>
-                <div class="checkbox" abm-checkbox label="checkbox!">
-                    <input type="checkbox" ng-model="user.email" required ng-minlength="10">
-                </div>
-            </abm-form-group>
-            <div class="checkbox" abm-checkbox label="checkbox!">
-                <input type="checkbox" ng-model="user.email" required ng-minlength="10">
-            </div>
-            <abm-form-group error-messages-include="errors.html">
-                <label>Radio group!</label>
-                <div class="radio" abm-radio label="radio!">
-                    <input type="radio" name="radios" ng-model="user.email" required ng-minlength="10">
-                </div>
-                <div class="radio" abm-radio label="radio!">
-                    <input type="radio" name="radios" ng-model="user.email" required ng-minlength="10">
-                </div>
-            </abm-form-group>
-            <abm-form-group error-messages-include="errors.html">
-                <label for="select111" data-abm-label class="col-xs-2 control-label">Select</label>
-                <div class="col-xs-10">
-                    <select id="select111" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-            </abm-form-group>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Angular Bootsrap Material</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Getting started</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">Form controls</li>
+              <li><a href="#">Input</a></li>
+              <li><a href="#">Textarea</a></li>
+              <li><a href="#">Checkbox</a></li>
+              <li><a href="#">Radio</a></li>
+              <li><a href="#">Select</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Bootstrap components</li>
+            </ul>
+          </li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material">View on GitHub</a></li>
+          <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material/zipball/master">Download .zip</a></li>
+          <li class="active"><a href="http://github.com/tilwinjoy/angular-bootstrap-material/tarball/master">Download .tar.gz</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div id="main-content" class="container-fluid">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1 class="project-name">Bootstrap Material Design for Angular</h1>
+      <h2 class="project-tagline">AngularJS directives for creating material design style bootstrap components</h2>
+      <!--<p>
+  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+</p>-->
+    </div>
+  </div>
+  <div id="sub-content" class="container-fluid" ng-app="angularBootstrapMaterial">
+    <h3><a href="#form-controls">Form controls</a></h3>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4><a href="#input">Input</a></h4>
+        <form action="">
+          <h5>Static Labels</h5>
+          <abm-form-group class="form-group-sm">
+            <label data-abm-label>Static label - Small</label>
+            <input type="text" class="form-control" ng-model="inputs.static1" abm-form-control>
+          </abm-form-group>
+          <abm-form-group>
+            <label data-abm-label>Static label - Default</label>
+            <input type="text" class="form-control" ng-model="inputs.static2" abm-form-control placeholder="placeholder">
+          </abm-form-group>
+          <abm-form-group class="form-group-lg">
+            <label data-abm-label>Static label - Large</label>
+            <input type="text" class="form-control" ng-model="inputs.static3" abm-form-control>
+          </abm-form-group>
+          <h5>Folating Labels</h5>
+          <abm-form-group class="form-group-sm">
+            <label data-abm-label type="floating">Floating label - Small</label>
+            <input type="text" abm-form-control ng-model="inputs.floating1">
+          </abm-form-group>
+          <abm-form-group>
+            <label data-abm-label type="floating">Floating label - Default</label>
+            <input type="text" abm-form-control ng-model="inputs.floating2">
+          </abm-form-group>
+          <abm-form-group class="form-group-lg">
+            <label data-abm-label type="floating">Floating label - Large</label>
+            <input type="text" abm-form-control ng-model="inputs.floating3">
+          </abm-form-group>
         </form>
-        <footer class="site-footer">
-            <span class="site-footer-owner"><a href="http://github.com/tilwinjoy/angular-bootstrap-material">Bootstrap Material Design for Angular</a> is maintained by <a href="http://github.com/tilwinjoy">tilwinjoy</a>.</span>
+      </div>
+      <div class="col-xs-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4><a href="#input">Textarea</a></h4>
+        <form action="">
+          <abm-form-group>
+            <label data-abm-label type="floating">Floating textarea label</label>
+            <textarea abm-form-control ng-model="textarea"></textarea>
+          </abm-form-group>
+        </form>
+      </div>
+      <div class="col-xs-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4><a href="#checkbox">Checkbox</a></h4>
+        <form action="">
+          <abm-form-group>
+            <label>Checkbox group - Inside <code>.form-group</code></label>
+            <div class="checkbox" abm-checkbox label="Item1">
+              <input type="checkbox" ng-model="checkbox.item1">
+            </div>
+            <div class="checkbox" abm-checkbox label="Item2">
+              <input type="checkbox" ng-model="checkbox.item2">
+            </div>
+          </abm-form-group>
+          <label>Checkbox group - Outside <code>.form-group</code></label>
+          <div class="checkbox" abm-checkbox label="Item3">
+            <input type="checkbox" ng-model="checkbox.item3">
+          </div>
+          <div class="checkbox" abm-checkbox label="Item4">
+            <input type="checkbox" ng-model="checkbox.item4">
+          </div>
 
-            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-        </footer>
-
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-messages.min.js"></script>
-    <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/development/dist/angular-bootstrap-material.js"></script>
+        </form>
+      </div>
+      <div class="col-xs-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4><a href="#radio">Radio</a></h4>
+        <form action="">
+          <abm-form-group>
+            <label>Radio group - inside <code>.form-group</code> </label>
+            <div class="radio" abm-radio label="Item1">
+              <input type="radio" name="radios" ng-model="radio.item1">
+            </div>
+            <div class="radio" abm-radio label="Item2">
+              <input type="radio" name="radios" ng-model="radio.item2">
+            </div>
+          </abm-form-group>
+          <label>Radio group - outside <code>.form-group</code> </label>
+          <div class="radio" abm-radio label="Item3">
+            <input type="radio" name="radios" ng-model="radio.item3">
+          </div>
+          <div class="radio" abm-radio label="Item4">
+            <input type="radio" name="radios" ng-model="radio.item4">
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-6"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4><a href="#select">Select</a></h4>
+        <form action="">
+          <abm-form-group>
+            <label for="select111" data-abm-label class="col-xs-2 control-label">Select</label>
+            <div class="col-xs-10">
+              <select id="select111" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </abm-form-group>
+        </form>
+      </div>
+      <div class="col-xs-6"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-messages.min.js"></script>
+  <script src="dist/angular-bootstrap-material.js"></script>
 </body>
 
 </html>
