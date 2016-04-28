@@ -1,6 +1,0 @@
-{
-  "name": "Bootstrap Material Design for Angular",
-  "tagline": "AngularJS directives for creating material design style bootstrap components",
-  "body": "## angular-bootstrap-material\r\nangularJS directives for creating material design style bootstrap components based on [bootstrap-material-design](http://fezvrasta.github.io/bootstrap-material-design/) css\r\n\r\n#### This is a work in progress. I'm planning to add support for all the basic form controls as a start.\r\n\r\n##### To do:\r\n\r\n- [ ] Inputs\r\n  - [ ] Basic support\r\n  - [ ] Support for advanced types\r\n- [ ] Textarea\r\n- [ ] Checkbox\r\n- [ ] Radio\r\n- [ ] Select\r\n\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
