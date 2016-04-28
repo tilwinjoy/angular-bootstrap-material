@@ -1,15 +1,6 @@
 ## angular-bootstrap-material
-angularJS directives for creating material design style bootstrap components based on [bootstrap-material-design](http://fezvrasta.github.io/bootstrap-material-design/) css
+AngularJS directives for creating bootstrap material design components based on [bootstrap-material-design](http://fezvrasta.github.io/bootstrap-material-design/) css
 
-#### This is a work in progress. I'm planning to add support for all the basic form controls as a start.
+### This is a work in progress.
 
-##### To do:
-
-- [ ] Inputs
-  - [ ] Basic support
-  - [ ] Support for advanced types
-- [ ] Textarea
-- [ ] Checkbox
-- [ ] Radio
-- [ ] Select
-
+Visit http://tilwinjoy.github.io/angular-bootstrap-material/ for demos
