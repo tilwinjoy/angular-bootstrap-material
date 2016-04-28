@@ -192,6 +192,7 @@ angular.module('angularBootstrapMaterial')
             if ($input.prop('disabled')) return;
             ctrl.toggleFocus(event.type == 'mouseover');
           });
+                }
         }
       }
     }
