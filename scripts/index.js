@@ -1,1 +1,1 @@
-angular.module('angularBootstrapMaterial', ['ngMessages']);
+angular.module('angularBootstrapMaterialDocs', ['angularBootstrapMaterial', 'ui.bootstrap']);
