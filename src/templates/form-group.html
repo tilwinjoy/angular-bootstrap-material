@@ -1,0 +1,10 @@
+<div class="form-group" ng-class="{{classList}}" ng-form="fg_{{$id}}">
+  <abm-transclude-slot></abm-transclude-slot>
+  <div ng-show="showErrors" ng-messages="this['fg_'+$id].$error" ng-messages-multiple>
+    <div ng-if="errorMessagesInclude" ng-messages-include="{{errorMessagesInclude}}"></div>
+    <div ng-repeat="(key,value) in errorMessageMap">
+      <!-- use ng-message-exp for a message whose key is given by an expression -->
+      <div ng-message-exp="key" class="help-block">{{value}}</div>
+    </div>
+  </div>
+</div>
