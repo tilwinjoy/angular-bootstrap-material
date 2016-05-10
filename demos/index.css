@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+}
+
+#main-content {
+  margin-top: 60px;
+}
+
+#startup,
+#sub-content,
+#sub-content .row {
+  margin-top: -70px;
+  padding-top: 70px;
+}
+
+#sub-content h4 {
+  margin-top: 40px;
+}
+
+{
+  padding-top: 50px;
+}
+
+form {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.description {
+  margin-top: 20px;
+  padding: 20px;
+}
