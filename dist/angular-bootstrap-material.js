@@ -25,6 +25,46 @@ angular.module('angularBootstrapMaterial')
     }]);
 
 angular.module('angularBootstrapMaterial')
+  .directive('abmComponent', ['ripple', function (ripple) {
+    return {
+      link: function ($scope, $element, attrs) {
+        var componentMap = {
+          ".btn:not(.btn-link)": "",
+          ".card-image": "",
+          ".navbar": "a:not(.withoutripple)",
+          ".dropdown-menu": "a",
+          ".nav-tabs": "a:not(.withoutripple)",
+          ".withripple": "",
+          ".pagination": "li:not(.active):not(.disabled) a:not(.withoutripple)"
+        };
+        var matches = null;
+        //check if the element 
+        $parent = $element.parent();
+        for (var key in componentMap) {
+          if (componentMap.hasOwnProperty(key)) {
+            var value = componentMap[key];
+            if (matches) break;
+            var elems = $parent[0].querySelectorAll(key);
+            for (var i = 0; i < elems.length; i++) {
+              var elem = elems[i];
+              if (elem === $element[0]) {
+                if (value)
+                  matches = elem.querySelectorAll(value);
+                else
+                  matches = elem;
+                break;
+              }
+            }
+          }
+        }
+        angular.forEach(matches, function (elem) {
+          ripple(angular.element(elem));
+        });
+      }
+    };
+  }]);
+
+angular.module('angularBootstrapMaterial')
   .directive('abmLabel', [function () {
     return {
       /*templateUrl: 'templates/label.html',
@@ -192,7 +232,6 @@ angular.module('angularBootstrapMaterial')
             if ($input.prop('disabled')) return;
             ctrl.toggleFocus(event.type == 'mouseover');
           });
-                }
         }
       }
     }
@@ -366,7 +405,46 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   };
 
+  /**
+   * Turn on the ripple effect
+   */
+  function rippleOn($element, $ripple) {
+    var size = getNewSize($element[0], $ripple[0]);
 
+    if (hasTransitionSupport()) {
+      $ripple
+        .css({
+          "-ms-transform": "scale(" + size + ")",
+          "-moz-transform": "scale(" + size + ")",
+          "-webkit-transform": "scale(" + size + ")",
+          "transform": "scale(" + size + ")"
+        })
+        .addClass('ripple-on')
+        .data("animating", "on")
+        .data("mousedown", "on");;
+    } else {
+      $ripple.animate({
+        "width": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
+        "height": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
+        "margin-left": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
+        "margin-top": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
+        "opacity": 0.2
+      }, 500, function () {
+        $ripple.trigger("transitionend");
+      });
+    }
+  };
+
+  /**
+   * End the animation of the ripple
+   */
+  function rippleEnd($ripple) {
+    $ripple.data("animating", "off");
+
+    if ($ripple.data("mousedown") === "off") {
+      rippleOut($ripple);
+    }
+  };
 
   /**
    * Turn off the ripple effect
@@ -387,36 +465,6 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
       $ripple.remove();
     });
   };
-
-
-  /**
-   * Turn on the ripple effect
-   */
-  function rippleOn($element, $ripple) {
-    var size = getNewSize($element[0], $ripple[0]);
-
-    if (hasTransitionSupport()) {
-      $ripple
-        .css({
-          "-ms-transform": "scale(" + size + ")",
-          "-moz-transform": "scale(" + size + ")",
-          "-webkit-transform": "scale(" + size + ")",
-          "transform": "scale(" + size + ")"
-        })
-        .addClass('ripple-on');
-    } else {
-      $ripple.animate({
-        "width": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
-        "height": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
-        "margin-left": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
-        "margin-top": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
-        "opacity": 0.2
-      }, 500, function () {
-        $ripple.trigger("transitionend");
-      });
-    }
-  };
-
 
   return function ($element) {
     var element = $element[0]
@@ -471,8 +519,8 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
       var $ripple = angular.element('<div class="ripple"></div>');
 
       $ripple.css({
-        left: relX,
-        top: relY,
+        left: relX + 'px',
+        top: relY + 'px',
         'background-color': rippleColor
       });
 
@@ -495,6 +543,13 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
        * Turn on the ripple animation
        */
       rippleOn($element, $ripple);
+
+      /**
+       * Call the rippleEnd function when the transition "on" ends
+       */
+      setTimeout(function () {
+        rippleEnd($ripple);
+      }, 500);
 
       /**
        * Detect when the user leaves the element

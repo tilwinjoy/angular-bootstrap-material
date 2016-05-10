@@ -127,7 +127,46 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   };
 
+  /**
+   * Turn on the ripple effect
+   */
+  function rippleOn($element, $ripple) {
+    var size = getNewSize($element[0], $ripple[0]);
 
+    if (hasTransitionSupport()) {
+      $ripple
+        .css({
+          "-ms-transform": "scale(" + size + ")",
+          "-moz-transform": "scale(" + size + ")",
+          "-webkit-transform": "scale(" + size + ")",
+          "transform": "scale(" + size + ")"
+        })
+        .addClass('ripple-on')
+        .data("animating", "on")
+        .data("mousedown", "on");;
+    } else {
+      $ripple.animate({
+        "width": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
+        "height": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
+        "margin-left": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
+        "margin-top": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
+        "opacity": 0.2
+      }, 500, function () {
+        $ripple.trigger("transitionend");
+      });
+    }
+  };
+
+  /**
+   * End the animation of the ripple
+   */
+  function rippleEnd($ripple) {
+    $ripple.data("animating", "off");
+
+    if ($ripple.data("mousedown") === "off") {
+      rippleOut($ripple);
+    }
+  };
 
   /**
    * Turn off the ripple effect
@@ -148,36 +187,6 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
       $ripple.remove();
     });
   };
-
-
-  /**
-   * Turn on the ripple effect
-   */
-  function rippleOn($element, $ripple) {
-    var size = getNewSize($element[0], $ripple[0]);
-
-    if (hasTransitionSupport()) {
-      $ripple
-        .css({
-          "-ms-transform": "scale(" + size + ")",
-          "-moz-transform": "scale(" + size + ")",
-          "-webkit-transform": "scale(" + size + ")",
-          "transform": "scale(" + size + ")"
-        })
-        .addClass('ripple-on');
-    } else {
-      $ripple.animate({
-        "width": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
-        "height": Math.max($element.outerWidth(), $element.outerHeight()) * 2,
-        "margin-left": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
-        "margin-top": Math.max($element.outerWidth(), $element.outerHeight()) * (-1),
-        "opacity": 0.2
-      }, 500, function () {
-        $ripple.trigger("transitionend");
-      });
-    }
-  };
-
 
   return function ($element) {
     var element = $element[0]
@@ -232,8 +241,8 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
       var $ripple = angular.element('<div class="ripple"></div>');
 
       $ripple.css({
-        left: relX,
-        top: relY,
+        left: relX + 'px',
+        top: relY + 'px',
         'background-color': rippleColor
       });
 
@@ -256,6 +265,13 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
        * Turn on the ripple animation
        */
       rippleOn($element, $ripple);
+
+      /**
+       * Call the rippleEnd function when the transition "on" ends
+       */
+      setTimeout(function () {
+        rippleEnd($ripple);
+      }, 500);
 
       /**
        * Detect when the user leaves the element
