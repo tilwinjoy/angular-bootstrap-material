@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.demo').controller('TabsDemoCtrl', function ($scope, $window) {
+angular.module('angularBootstrapMaterialDocs').controller('TabsDemoCtrl', function ($scope, $window) {
   $scope.tabs = [
     {
       title: 'Dynamic Title 1',

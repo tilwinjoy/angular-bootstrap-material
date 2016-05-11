@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.demo').controller('PopoverDemoCtrl', function ($scope, $sce) {
+angular.module('angularBootstrapMaterialDocs').controller('PopoverDemoCtrl', function ($scope, $sce) {
   $scope.dynamicPopover = {
     content: 'Hello, World!',
     templateUrl: 'myPopoverTemplate.html',

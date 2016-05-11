@@ -3,12 +3,9 @@ angular.module('angularBootstrapMaterial')
     return {
       link: function ($scope, $element, attrs) {
         var componentMap = {
-          ".btn:not(.btn-link)": "",
-          ".card-image": "",
           ".navbar": "a:not(.withoutripple)",
           ".dropdown-menu": "a",
-          ".nav-tabs": "a:not(.withoutripple)",
-          ".withripple": "",
+          ".uib-tab": "a:not(.withoutripple)",
           ".pagination": "li:not(.active):not(.disabled) a:not(.withoutripple)"
         };
         var matches = null;

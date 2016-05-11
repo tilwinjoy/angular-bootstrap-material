@@ -1,0 +1,22 @@
+Everything before the line containing only '---' will not be parsed
+
+---
+ name: Angular Bootstrap Material - Pager
+ description: Example for creating Pager component with Angular Bootstrap Material
+ authors:
+   - Tilwin joy
+ resources:
+   - https://fonts.googleapis.com/css?family=Open+Sans:400,700
+   - https://fonts.googleapis.com/css?family=Roboto:300,400,500,700
+   - https://fonts.googleapis.com/icon?family=Material+Icons
+   - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css
+   - https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.min.css
+   - https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css
+   - https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js
+   - https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-messages.min.js
+   - https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap.min.js
+   - https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.min.js
+ normalize_css: no
+ ...
+
+Everything after the line containing only '...' will not be parsed

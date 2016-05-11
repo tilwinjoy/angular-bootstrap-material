@@ -1,6 +1,6 @@
 <div ng-controller="ProgressDemoCtrl">
 
-  <h3>Static</h3>
+  <h4>Static</h4>
   <div class="row">
     <div class="col-sm-4">
       <uib-progressbar value="55"></uib-progressbar>
@@ -14,8 +14,8 @@
   </div>
 
   <hr />
-  <h3>Dynamic <button type="button" class="btn btn-sm btn-primary" ng-click="random()">Randomize</button></h3>
-  <uib-progressbar max="max" value="dynamic"><span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span></uib-progressbar>
+  <h4>Dynamic <button type="button" class="btn btn-sm btn-primary" ng-click="random()">Randomize</button></h4>
+  <uib-progressbar id="randomizedProgress" max="max" value="dynamic"><span>{{dynamic}} / {{max}}</span></uib-progressbar>
 
   <small><em>No animation</em></small>
   <uib-progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></uib-progressbar>
@@ -24,7 +24,7 @@
   <uib-progressbar class="progress-striped active" value="dynamic" type="{{type}}">{{type}} <i ng-show="showWarning">!!! Watch out !!!</i></uib-progressbar>
 
   <hr />
-  <h3>Stacked <button type="button" class="btn btn-sm btn-primary" ng-click="randomStacked()">Randomize</button></h3>
+  <h4>Stacked <button type="button" class="btn btn-sm btn-primary" ng-click="randomStacked()">Randomize</button></h4>
   <uib-progress>
     <uib-bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"><span ng-hide="bar.value < 5">{{bar.value}}%</span></uib-bar>
   </uib-progress>

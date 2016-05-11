@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.demo').controller('DropdownCtrl', function ($scope, $log) {
+angular.module('angularBootstrapMaterialDocs').controller('DropdownCtrl', function ($scope, $log) {
   $scope.items = [
     'The first choice!',
     'And another choice for you.',

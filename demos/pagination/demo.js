@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.demo').controller('PaginationDemoCtrl', function ($scope, $log) {
+angular.module('angularBootstrapMaterialDocs').controller('PaginationDemoCtrl', function ($scope, $log) {
   $scope.totalItems = 64;
   $scope.currentPage = 4;
 

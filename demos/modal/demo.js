@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.demo', []).controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
+angular.module('angularBootstrapMaterialDocs').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
 
   $scope.items = ['item1', 'item2', 'item3'];
 
@@ -34,7 +34,7 @@ angular.module('ui.bootstrap.demo', []).controller('ModalDemoCtrl', function ($s
 // Please note that $uibModalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-angular.module('ui.bootstrap.demo').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('angularBootstrapMaterialDocs').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
   $scope.items = items;
   $scope.selected = {

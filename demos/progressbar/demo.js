@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap.demo').controller('ProgressDemoCtrl', function ($scope) {
+angular.module('angularBootstrapMaterialDocs').controller('ProgressDemoCtrl', function ($scope) {
   $scope.max = 200;
 
   $scope.random = function () {
