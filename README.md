@@ -11,9 +11,9 @@ This project is an AngularJS version of the aswesome [bootstrap material design]
 ###Dependencies:
 - [AngularJS](http://angularjs.org)
 - [Angular-messages](http://angularjs.org)
-- [Bootstrap](http://getbootstrap.com") (tested with version 3.3.6)
-- [Bootstrap Material Design CSS components](http://fezvrasta.github.io/bootstrap-material-design/) (bootstrap-material-design.css and ripples.css)
 - [UI Bootstrap](https://angular-ui.github.io/bootstrap/) (Optional: required for supporting bootstrap's JavaScript components)
+- [Bootstrap CSS](http://getbootstrap.com") (tested with version 3.3.6)
+- [Bootstrap Material Design CSS components](http://fezvrasta.github.io/bootstrap-material-design/) (bootstrap-material-design.css and ripples.css)
 
 ###How to install:
 
@@ -36,3 +36,4 @@ Visit http://tilwinjoy.github.io/angular-bootstrap-material/ for demos
 ###Contributing
 
 Any suggestions for improvement, bug reports and helping hands are very welcome.
+If you found a CSS issue, chances are it's an issue with [Bootstrap Material Design](https://github.com/FezVrasta/bootstrap-material-design), in that case report in it's [issue tracker](https://github.com/FezVrasta/bootstrap-material-design/issues) as per [guidelines](https://github.com/FezVrasta/bootstrap-material-design/blob/master/CONTRIBUTING.md). 
