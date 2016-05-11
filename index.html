@@ -30,7 +30,7 @@
 
 <body ng-app="angularBootstrapMaterialDocs">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top" abm-component>
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -54,10 +54,22 @@
               <li><a href="#select">Select</a></li>
             </ul>
           </li>
-          <li><a href="#bootstrap-components">Bootstrap Components</a></li>
           <li class="dropdown" uib-dropdown>
-            <a class="dropdown-toggle" uib-dropdown-toggle role="button">Material Components<span class="caret"></span></a>
+            <a class="dropdown-toggle" uib-dropdown-toggle role="button">Components<span class="caret"></span></a>
             <ul class="dropdown-menu" uib-dropdown-menu>
+              <li class="dropdown-header">Bootstrap</li>
+              <li><a href="#navbar">Navbar</a></li>
+              <li><a href="#tabs">Tabs</a></li>
+              <li><a href="#alert">Alert</a></li>
+              <!--<li>
+  <a href="#dropdown">Dropdown</a></li>-->
+              <li><a href="#progress">Progress</a></li>
+              <li><a href="#pagination">Pagination</a></li>
+              <li><a href="#pager">Pager</a></li>
+              <li><a href="#modal">Modal</a></li>
+              <li><a href="#popover">Popover</a></li>
+              <li><a href="#tooltip">Tooltip</a></li>
+              <li class="dropdown-header">Other</li>
               <li><a href="#toggle">Toggle button</a></li>
             </ul>
           </li>
@@ -75,65 +87,46 @@
   <div id="main-content" class="container-fluid">
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <h2 class="project-name">Bootstrap Material Design for Angular</h2>
-      <h5 class="project-tagline">AngularJS directives for creating material design style bootstrap components</h5>
+      <h1 class="project-name">Bootstrap Material Design for Angular</h1>
+      <h3 class="project-tagline">AngularJS directives for creating material design style bootstrap components</h3>
       <!--<p>
   <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
 </p>-->
     </div>
   </div>
   <div id="startup" class="container-fluid">
-    <h3>Getting Started</h3>
+    <h2>Getting Started</h2>
     <p>This project is an AngularJS version of the aswesome
-      <a href="http://fezvrasta.github.io/bootstrap-material-design/">bootstrap material design</a>. It removes the dependency on jQuery as well as Bootstrap's JavaScript</p>
+      <a href="http://fezvrasta.github.io/bootstrap-material-design/">bootstrap material design</a>. It removes the dependency on jQuery as well as Bootstrap's JavaScript and makes it eady to work with dynamic angularJS components</p>
 
-    <h5>Dependencies:</h5>
+    <h3>Dependencies:</h3>
     <ul class="list-group">
       <li class="list-group-item"><a href="http://angularjs.org" target="_blank">AngularJS</a></li>
       <li class="list-group-item"><a href="http://angularjs.org" target="_blank">Angular-messages</a></li>
+      <li class="list-group-item"><a href="https://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> (Optional: required for using bootstap's JavaScript components)
+      </li>
       <li class="list-group-item"><a href="http://getbootstrap.com" target="_blank">Bootstrap CSS</a> (tested with version 3.3.6)
       </li>
-      <li class="list-group-item"><a href="http://getbootstrap.com" target="_blank">Material Design for Bootstrap CSS components</a> (bootstrap-material-design.css and ripples.css)
+      <li class="list-group-item"><a href="http://fezvrasta.github.io/bootstrap-material-design/" target="_blank">Material Design for Bootstrap CSS components</a> (bootstrap-material-design.css and ripples.css)
       </li>
     </ul>
-    <h5>How to install:</h5>
+    <h3>How to install:</h3>
     <p>Grab the latest source from <a href="https://raw.githubusercontent.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.js" target="_blank">Github</a> and include it in your project after the dependencies. Include <code>angularBootstrapMaterial</code> module in your application:
     </p>
     <pre>angular.module('app', ['angularBootstrapMaterial']);</pre>
+
+    <h3>CSS Related Stuff:</h3>
+    <p>This project doesn't do any CSS magic, all that comes from <a href="http://fezvrasta.github.io/bootstrap-material-design/">Bootstrap material design</a>. </p>
+    <p>For demos and documentation of typography, tables, icons etc refer the Bootstrap material design <a href="http://fezvrasta.github.io/bootstrap-material-design/">documentation</a>.
+    </p>
+
   </div>
-  <div id="sub-content" class="container-fluid">
-    <h4>Form controls</h4>
-    <div id="input" class="row">
-      <div class="col-xs-6">
-        <h5>Input</h5>
-        <form action="">
-          <h5>Static Labels</h5>
-          <abm-form-group class="form-group-sm">
-            <label data-abm-label>Static label - Small</label>
-            <input type="text" class="form-control" ng-model="inputs.static1" abm-form-control>
-          </abm-form-group>
-          <abm-form-group>
-            <label data-abm-label>Static label - Default</label>
-            <input type="text" class="form-control" ng-model="inputs.static2" abm-form-control placeholder="placeholder">
-          </abm-form-group>
-          <abm-form-group class="form-group-lg">
-            <label data-abm-label>Static label - Large</label>
-            <input type="text" class="form-control" ng-model="inputs.static3" abm-form-control>
-          </abm-form-group>
-          <h5>Folating Labels</h5>
-          <abm-form-group class="form-group-sm">
-            <label data-abm-label type="floating">Floating label - Small</label>
-            <input type="text" abm-form-control ng-model="inputs.floating1">
-          </abm-form-group>
-          <abm-form-group>
-            <label data-abm-label type="floating">Floating label - Default</label>
-            <input type="text" abm-form-control ng-model="inputs.floating2">
-          </abm-form-group>
-          <abm-form-group class="form-group-lg">
-            <label data-abm-label type="floating">Floating label - Large</label>
-            <input type="text" abm-form-control ng-model="inputs.floating3">
-          </abm-form-group>
-        </form>
+  <div id="form-controls" class="container-fluid">
+    <h2>Form controls</h2>
+    <div id="input" class="row component">
+      <div class="col-xs-6 demo">
+        <h3>Input</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/input/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6 description">
         <p>Create a material design input by adding <code>abmFormControl</code> directive to an <code>input</code> element and wrapping it in <code>abmFormGroup</code> directive.</p>
@@ -144,107 +137,126 @@
         </p>
       </div>
     </div>
-    <div id="textarea" class="row">
+    <div id="textarea" class="row component">
       <div class="col-xs-6">
-        <h5>Textarea</h5>
-        <form action="">
-          <abm-form-group>
-            <label data-abm-label type="floating">Floating textarea label</label>
-            <textarea abm-form-control ng-model="textarea"></textarea>
-          </abm-form-group>
-        </form>
+        <h3>Textarea</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/textarea/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6 description">
         <p>Creating a material design textarea the same as creating an input, except that <code>abmFormControl</code> directive should be added to a <code>textarea</code> element.
       </div>
     </div>
-    <div id="checkbox" class="row">
+    <div id="checkbox" class="row component">
       <div class="col-xs-6">
-        <h5>Checkbox</h5>
-        <form action="">
-          <abm-form-group>
-            <label>Checkbox group - Inside <code>.form-group</code></label>
-            <div class="checkbox" abm-checkbox label="Item1">
-              <input type="checkbox" ng-model="checkbox.item1">
-            </div>
-            <div class="checkbox" abm-checkbox label="Item2">
-              <input type="checkbox" ng-model="checkbox.item2">
-            </div>
-          </abm-form-group>
-          <label>Checkbox group - Outside <code>.form-group</code></label>
-          <div class="checkbox" abm-checkbox label="Item3">
-            <input type="checkbox" ng-model="checkbox.item3">
-          </div>
-          <div class="checkbox" abm-checkbox label="Item4">
-            <input type="checkbox" ng-model="checkbox.item4">
-          </div>
-        </form>
+        <h3>Checkbox</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/checkbox/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6 description">
         <p>Create a material design checkbox by adding <code>abmCheckbox</code> directive to the checkbox input's wrapper. Add a <code>label</code> property on it to specify it's label</p>
         <p>Create a checkbox group by simply wrapping the checkboxes in a <code>abmFormGroup</code> directive</p>
       </div>
     </div>
-    <div id="radio" class="row">
+    <div id="radio" class="row component">
       <div class="col-xs-6">
-        <h5>Radio</h5>
-        <form action="">
-          <abm-form-group>
-            <label>Radio group - inside <code>.form-group</code> </label>
-            <div class="radio" abm-radio label="Item1">
-              <input type="radio" name="radios" ng-model="radio.item1">
-            </div>
-            <div class="radio" abm-radio label="Item2">
-              <input type="radio" name="radios" ng-model="radio.item2">
-            </div>
-          </abm-form-group>
-          <label>Radio group - outside <code>.form-group</code> </label>
-          <div class="radio" abm-radio label="Item3">
-            <input type="radio" name="radios" ng-model="radio.item3">
-          </div>
-          <div class="radio" abm-radio label="Item4">
-            <input type="radio" name="radios" ng-model="radio.item4">
-          </div>
-        </form>
+        <h3>Radio</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/radio/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6 description">
         <p>Creating a material design radio or radio group is similar to creating a checkbox or checkbox group, except that <code>abmRadio</code> directive needs to be added to the radio input's wrapper.
       </div>
     </div>
-    <div id="select" class="row">
+    <div id="select" class="row component">
       <div class="col-xs-6">
-        <h5>Select</h5>
-        <form action="">
-          <abm-form-group>
-            <label for="select111" data-abm-label class="col-xs-2 control-label">Select</label>
-            <div class="col-xs-10">
-              <select id="select111" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </abm-form-group>
-        </form>
+        <h3>Select</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/select/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6"></div>
     </div>
-    <h4>Bootstrap Components</h4>
-    <div id="bootstrap-components" class="">
-      <p>To create material style bootstrap components, include
-        <a href="https://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap </a> in your project and follow the instructions in it's documentation</p>
+  </div>
+  <div id="bs-components" class="container-fluid">
+    <h2>Components</h2>
+    <div id="bootstrap-components" class="row">
+      <div class="col-xs-12">
+        <p>For using bootstrap's JavaScript components, include
+          <a href="https://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap </a> in your project and follow the instructions in it's documentation</p>
+
+        <p>To apply the material style ripple effect, add the <code>abmComponent</code> directive on the root element of a bootstrap compoenet, as shown in the below examples.</p>
+      </div>
     </div>
-    <h4>Material Components</h4>
-    <div id="toggle" class="row">
+
+    <div id="navbar" class="row component">
+      <div class="col-xs-12">
+        <h3>Navbar</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/navbar/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Buttons</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/buttons/demo.html'"></ng-include>
+        <p>For more visit Bootstrap material design documentation for <a href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html#buttons">buttons </a></p>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Tabs</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/tabs/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Alert</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/alert/demo.html'"></ng-include>
+      </div>
+    </div>
+    <!--<div class="row component">
+  <div class="col-xs-12">
+    <h3>Dropdown</h3>
+    <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/dropdown/demo.html'"></ng-include>
+  </div>
+</div>-->
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Progress</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/progressbar/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Pagination</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/pagination/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Pager</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/pager/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Modal</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/modal/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Popover</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/popover/demo.html'"></ng-include>
+      </div>
+    </div>
+    <div class="row component">
+      <div class="col-xs-12">
+        <h3>Tooltip</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/tooltip/demo.html'"></ng-include>
+      </div>
+    </div>
+  </div>
+  <div id="material-components" class="container-fluid">
+    <div id="toggle" class="row component">
       <div class="col-xs-6">
-        <h5>Toggle Button</h5>
-        <form action="">
-          <div class="togglebutton" abm-toggle label="Wi-Fi">
-            <input type="checkbox" checked="">
-          </div>
-        </form>
+        <h3>Toggle Button</h3>
+        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/toggle/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6 description">
         <p>Create a material design toggle button by adding <code>abmtoggle</code> directive to the checkbox input's wrapper. Add a <code>label</code> property on it to specify it's label</p>
@@ -253,9 +265,20 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-messages.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
   <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.min.js"></script>
   <script src="scripts/index.js"></script>
+
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/alert/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/buttons/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/dropdown/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/modal/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/pager/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/pagination/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/popover/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/progressbar/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/tabs/demo.js"></script>
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/tooltip/demo.js"></script>
 </body>
 
 </html>
