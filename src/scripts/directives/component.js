@@ -28,9 +28,13 @@ angular.module('angularBootstrapMaterial')
             }
           }
         }
-        angular.forEach(matches, function (elem) {
-          ripple(angular.element(elem));
-        });
+        if (!matches)
+          ripple($element);
+        else {
+          angular.forEach(matches, function (elem) {
+            ripple(angular.element(elem));
+          });
+        }
       }
     };
   }]);
