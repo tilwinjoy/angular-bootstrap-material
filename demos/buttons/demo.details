@@ -1,6 +1,6 @@
 ---
- name: Angular Bootstrap Material - Validation
- description: Example for form validation with Angular Bootstrap Material
+ name: Angular Bootstrap Material - Buttons
+ description: Example for creating Buttons with Angular Bootstrap Material
  authors:
    - Tilwin joy
  resources:
@@ -16,4 +16,4 @@
    - https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.min.js
    - https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/index.js
  normalize_css: no
-...
+ ...

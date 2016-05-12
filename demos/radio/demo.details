@@ -1,5 +1,3 @@
-Everything before the line containing only '---' will not be parsed
-
 ---
  name: Angular Bootstrap Material - Radio
  description: Example for creating Radio component with Angular Bootstrap Material
@@ -16,8 +14,7 @@ Everything before the line containing only '---' will not be parsed
    - https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-messages.min.js
    - https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap.min.js
    - https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.min.js
-   - ../index.js
+   - https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/index.js
  normalize_css: no
- ...
+...
 
-Everything after the line containing only '...' will not be parsed
