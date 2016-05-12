@@ -4,7 +4,7 @@ angular.module('angularBootstrapMaterial')
       /*templateUrl: 'templates/input.html',
     replace: true,*/
       scope: {},
-      require: ["ngModel", '^abmFormGroup'],
+      require: ['ngModel', '^abmFormGroup'],
       compile: function () {
         return function ($scope, $element, attrs, ctrls) {
           var input = ctrls[0];
@@ -14,15 +14,17 @@ angular.module('angularBootstrapMaterial')
           if (!$element.attr('id')) // TBD checkif the condition is unnecessary
             $element.attr('id', 'form-control-' + $scope.$id);
           formGroup.registerControl($scope);
-          $element.on("input paste", function (e) {
+          $element.on('input paste', function (e) {
               if (isChar(e)) {
                 formGroup.toggleEmpty(true);
               }
-            }).on("focus", function () {
+            }).on('focus', function () {
               formGroup.toggleFocus(true);
             })
-            .on("blur", function () {
+            .on('blur', function () {
               formGroup.toggleFocus(false);
+              if ($element.val())
+                formGroup.toggleEmpty(false);
             });
 
           $scope.$watch(function () {
