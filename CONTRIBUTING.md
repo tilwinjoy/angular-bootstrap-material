@@ -6,7 +6,7 @@
 
 The [issue tracker](https://github.com/FezVrasta/bootstrap-material-design/issues) is the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
 
-* Please **do not** use the issue tracker for personal support requests. [Stack Overflow `angular-bootstrap-material`](https://stackoverflow.com/questions/tagged/angular-material-design) tag is the best place to get help.
+* Please **do not** use the issue tracker for personal support requests. [Stack Overflow `angular-bootstrap-material`](https://stackoverflow.com/questions/tagged/angular-material-design) tag is the best place to get help (This tag does not exist as of now. If you have a new question related to this project and you're unable to create it, let me know about your question via [this thread](https://github.com/tilwinjoy/angular-bootstrap-material/issues/3)).
   
 * Please **do not** post comments consisting solely of "+1" or ":thumbsup:". Use [GitHub's "reactions" feature](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments)  instead.
 
