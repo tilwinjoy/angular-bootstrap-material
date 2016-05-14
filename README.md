@@ -1,12 +1,12 @@
 # AngularJS Bootstrap Material Design
 
-AngularJS directives for creating bootstrap material design components based on [bootstrap-material-design](http://fezvrasta.github.io/bootstrap-material-design/) css.
+AngularJS directives for creating bootstrap material design components based on [Bootstrap material design](http://fezvrasta.github.io/bootstrap-material-design/) css.
 
 ###### This is a work in progress.
 
 ##Getting Started
 
-This project is an AngularJS version of the aswesome [bootstrap material design](http://fezvrasta.github.io/bootstrap-material-design/). It removes the dependency on jQuery as well as Bootstrap's JavaScript and makes it easy to work with dynamic AngularJS components
+This project is an AngularJS version of the aswesome [Bootstrap material design](http://fezvrasta.github.io/bootstrap-material-design/). It removes the dependency on jQuery as well as Bootstrap's JavaScript and makes it easy to work with dynamic AngularJS components
 
 ###Dependencies:
 - [AngularJS](http://angularjs.org)
@@ -33,7 +33,15 @@ For demos and documentation of typography, tables, icons etc refer the Bootstrap
 
 Visit http://tilwinjoy.github.io/angular-bootstrap-material/ for demos
 
-###Contributing
+### Support and Contributions
 
-Any suggestions for improvement, bug reports and helping hands are very welcome.
-If you found a CSS issue, chances are it's an issue with [Bootstrap Material Design](https://github.com/FezVrasta/bootstrap-material-design), in that case report in it's [issue tracker](https://github.com/FezVrasta/bootstrap-material-design/issues) as per [guidelines](https://github.com/FezVrasta/bootstrap-material-design/blob/master/CONTRIBUTING.md). 
+If you like this project, don't forget to star this repository.  
+Any suggestions for improvement, bug reports and helping hands are very welcome. Please see the [CONTRIBUTING.md](https://github.com/tilwinjoy/angular-bootstrap-material/blob/master/CONTRIBUTING.md) file.
+
+### Development
+
+The build process uses [Gulp](http://gulpjs.com/) and frontend dependencies are managed via [Bower](http://bower.io/). Ensure you have nodejs installed.
+
+After cloning the repo, run `npm install && bower install` to ensure you have all dev dependencies.
+
+Once you make the changes, run `gulp` and load the `index.html` in demos folder in browser for testing.
