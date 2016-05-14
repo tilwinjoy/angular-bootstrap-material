@@ -36,7 +36,9 @@ Visit http://tilwinjoy.github.io/angular-bootstrap-material/ for demos
 ### Support and Contributions
 
 If you like this project, don't forget to star this repository.  
-Any suggestions for improvement, bug reports and helping hands are very welcome. Please see the [CONTRIBUTING.md](https://github.com/tilwinjoy/angular-bootstrap-material/blob/master/CONTRIBUTING.md) file.
+[Feature requests](https://github.com/tilwinjoy/angular-bootstrap-material/blob/master/CONTRIBUTING.md#feature-requests), [bug reports](https://github.com/tilwinjoy/angular-bootstrap-material/blob/master/CONTRIBUTING.md#bug-reports) and [helping hands](https://github.com/tilwinjoy/angular-bootstrap-material/blob/master/CONTRIBUTING.md#pull-requests) are very welcome. Please see the [CONTRIBUTING.md](https://github.com/tilwinjoy/angular-bootstrap-material/blob/master/CONTRIBUTING.md) file.
+
+If you have any suggestions for improvement, please use the [general discussion](https://github.com/tilwinjoy/angular-bootstrap-material/issues/3) thread.
 
 ### Development
 
