@@ -41,43 +41,43 @@
         </button>
         <a class="navbar-brand" href="#">Angular Bootsrap Material</a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#startup">Getting started</a></li>
+          <li><a href="#startup" target="_self">Getting started</a></li>
           <li class="dropdown" uib-dropdown>
             <a class="dropdown-toggle" uib-dropdown-toggle role="button">Form Controls <span class="caret"></span></a>
             <ul class="dropdown-menu" uib-dropdown-menu>
-              <li><a href="#input">Input</a></li>
-              <li><a href="#textarea">Textarea</a></li>
-              <li><a href="#checkbox">Checkbox</a></li>
-              <li><a href="#radio">Radio</a></li>
-              <li><a href="#select">Select</a></li>
+              <li><a href="#input" target="_self">Input</a></li>
+              <li><a href="#textarea" target="_self">Textarea</a></li>
+              <li><a href="#checkbox" target="_self">Checkbox</a></li>
+              <li><a href="#radio" target="_self">Radio</a></li>
+              <li><a href="#select" target="_self">Select</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#form-validation">Validation</a></li>
+              <li><a href="#form-validation" target="_self">Validation</a></li>
             </ul>
           </li>
           <li class="dropdown" uib-dropdown>
             <a class="dropdown-toggle" uib-dropdown-toggle role="button">Components<span class="caret"></span></a>
             <ul class="dropdown-menu" uib-dropdown-menu>
               <li class="dropdown-header">Bootstrap</li>
-              <li><a href="#navbar">Navbar</a></li>
-              <li><a href="#tabs">Tabs</a></li>
-              <li><a href="#alert">Alert</a></li>
+              <li><a href="#navbar" target="_self">Navbar</a></li>
+              <li><a href="#tabs" target="_self">Tabs</a></li>
+              <li><a href="#alert" target="_self">Alert</a></li>
               <!--<li>
   <a href="#dropdown">Dropdown</a></li>-->
-              <li><a href="#progress">Progress</a></li>
-              <li><a href="#pagination">Pagination</a></li>
-              <li><a href="#pager">Pager</a></li>
-              <li><a href="#modal">Modal</a></li>
-              <li><a href="#popover">Popover</a></li>
-              <li><a href="#tooltip">Tooltip</a></li>
+              <li><a href="#progress" target="_self">Progress</a></li>
+              <li><a href="#pagination" target="_self">Pagination</a></li>
+              <li><a href="#pager" target="_self">Pager</a></li>
+              <li><a href="#modal" target="_self">Modal</a></li>
+              <li><a href="#popover" target="_self">Popover</a></li>
+              <li><a href="#tooltip" target="_self">Tooltip</a></li>
               <li class="dropdown-header">Other</li>
-              <li><a href="#toggle">Toggle button</a></li>
+              <li><a href="#toggle" target="_self">Toggle button</a></li>
             </ul>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material">View on GitHub</a></li>
+          <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material" target="_blank">View on GitHub</a></li>
           <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material/zipball/master">Download .zip</a></li>
           <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material/tarball/master">Download .tar.gz</a></li>
         </ul>
@@ -198,20 +198,20 @@
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/navbar/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="buttons" class="row component">
       <div class="col-xs-12">
         <h3>Buttons</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/buttons/demo.html'"></ng-include>
         <p>For more visit Bootstrap material design documentation for <a href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html#buttons">buttons </a></p>
       </div>
     </div>
-    <div class="row component">
+    <div id="tabs" class="row component">
       <div class="col-xs-12">
         <h3>Tabs</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/tabs/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="alert" class="row component">
       <div class="col-xs-12">
         <h3>Alert</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/alert/demo.html'"></ng-include>
@@ -223,37 +223,37 @@
     <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/dropdown/demo.html'"></ng-include>
   </div>
 </div>-->
-    <div class="row component">
+    <div id="progress" class="row component">
       <div class="col-xs-12">
         <h3>Progress</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/progressbar/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="pagination" class="row component">
       <div class="col-xs-12">
         <h3>Pagination</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/pagination/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="pager" class="row component">
       <div class="col-xs-12">
         <h3>Pager</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/pager/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="modal" class="row component">
       <div class="col-xs-12">
         <h3>Modal</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/modal/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="popover" class="row component">
       <div class="col-xs-12">
         <h3>Popover</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/popover/demo.html'"></ng-include>
       </div>
     </div>
-    <div class="row component">
+    <div id="tooltip" class="row component">
       <div class="col-xs-12">
         <h3>Tooltip</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/tooltip/demo.html'"></ng-include>
