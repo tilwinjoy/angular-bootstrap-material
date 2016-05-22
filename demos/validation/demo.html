@@ -21,17 +21,15 @@
       <div class="togglebutton" abm-toggle label="Premium Account">
         <input type="checkbox" name="premiumAccount" ng-model="user.premium" ng-change="user.paymentMode=null">
       </div>
-      <fieldset ng-disabled="!user.premium">
-        <abm-form-group error-messages="errorMap">
-          <label>Prefered payment method</label>
-          <div class="radio" abm-radio label="Net banking">
-            <input type="radio" name="payment" value="net" ng-model="user.paymentMode" ng-required="user.premium">
-          </div>
-          <div class="radio" abm-radio label="Credit card">
-            <input type="radio" name="payment" value="credit" ng-model="user.paymentMode" ng-required="user.premium">
-          </div>
-        </abm-form-group>
-      </fieldset>
+      <abm-form-group error-messages="errorMap">
+        <label>Prefered payment method</label>
+        <div class="radio" abm-radio label="Net banking">
+          <input type="radio" name="payment" value="net" ng-model="user.paymentMode" ng-required="user.premium" ng-disabled="!user.premium">
+        </div>
+        <div class="radio" abm-radio label="Credit card">
+          <input type="radio" name="payment" value="credit" ng-model="user.paymentMode" ng-required="user.premium" ng-disabled="!user.premium">
+        </div>
+      </abm-form-group>
       <a href="" class="btn btn-raised btn-primary" ng-disabled="signup.$invalid" abm-component>Create Account</a>
     </form>
   </div>

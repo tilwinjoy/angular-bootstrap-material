@@ -45,40 +45,43 @@
         </button>
         <a class="navbar-brand" href="#">Angular Bootsrap Material</a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#startup">Getting started</a></li>
+          <li><a href="#startup" target="_self">Getting started</a></li>
           <li class="dropdown" uib-dropdown>
             <a class="dropdown-toggle" uib-dropdown-toggle role="button">Form Controls <span class="caret"></span></a>
             <ul class="dropdown-menu" uib-dropdown-menu>
-              <li><a href="#input">Input</a></li>
-              <li><a href="#textarea">Textarea</a></li>
-              <li><a href="#checkbox">Checkbox</a></li>
-              <li><a href="#radio">Radio</a></li>
-              <li><a href="#select">Select</a></li>
+              <li><a href="#input" target="_self">Input</a></li>
+              <li><a href="#textarea" target="_self">Textarea</a></li>
+              <li><a href="#checkbox" target="_self">Checkbox</a></li>
+              <li><a href="#radio" target="_self">Radio</a></li>
+              <li><a href="#select" target="_self">Select</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#form-validation" target="_self">Validation</a></li>
             </ul>
           </li>
           <li class="dropdown" uib-dropdown>
             <a class="dropdown-toggle" uib-dropdown-toggle role="button">Components<span class="caret"></span></a>
             <ul class="dropdown-menu" uib-dropdown-menu>
               <li class="dropdown-header">Bootstrap</li>
-              <li><a href="#navbar">Navbar</a></li>
-              <li><a href="#tabs">Tabs</a></li>
-              <li><a href="#alert">Alert</a></li>
-              <li><a href="#dropdown">Dropdown</a></li>
-              <li><a href="#progress">Progress</a></li>
-              <li><a href="#pagination">Pagination</a></li>
-              <li><a href="#pager">Pager</a></li>
-              <li><a href="#modal">Modal</a></li>
-              <li><a href="#popover">Popover</a></li>
-              <li><a href="#tooltip">Tooltip</a></li>
+              <li><a href="#navbar" target="_self">Navbar</a></li>
+              <li><a href="#tabs" target="_self">Tabs</a></li>
+              <li><a href="#alert" target="_self">Alert</a></li>
+              <!--<li>
+  <a href="#dropdown">Dropdown</a></li>-->
+              <li><a href="#progress" target="_self">Progress</a></li>
+              <li><a href="#pagination" target="_self">Pagination</a></li>
+              <li><a href="#pager" target="_self">Pager</a></li>
+              <li><a href="#modal" target="_self">Modal</a></li>
+              <li><a href="#popover" target="_self">Popover</a></li>
+              <li><a href="#tooltip" target="_self">Tooltip</a></li>
               <li class="dropdown-header">Other</li>
-              <li><a href="#toggle">Toggle button</a></li>
+              <li><a href="#toggle" target="_self">Toggle button</a></li>
             </ul>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material">View on GitHub</a></li>
+          <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material" target="_blank">View on GitHub</a></li>
           <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material/zipball/master">Download .zip</a></li>
           <li><a href="http://github.com/tilwinjoy/angular-bootstrap-material/tarball/master">Download .tar.gz</a></li>
         </ul>
@@ -173,6 +176,14 @@
       </div>
       <div class="col-xs-6"></div>
     </div>
+    <div id="form-validation" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Form Validation</h3>
+          <ng-include src="'validation/demo.html'"></ng-include>
+        </div>
+      </div>
+    </div>
   </div>
   <div id="bs-components" class="container-fluid">
     <h2>Components</h2>
@@ -261,14 +272,6 @@
       </div>
       <div class="col-xs-6 description">
         <p>Create a material design toggle button by adding <code>abmtoggle</code> directive to the checkbox input's wrapper. Add a <code>label</code> property on it to specify it's label</p>
-      </div>
-    </div>
-  </div>
-  <div id="form-validation" class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <h3>Form Validation</h3>
-        <ng-include src="'validation/demo.html'"></ng-include>
       </div>
     </div>
   </div>
