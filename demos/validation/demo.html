@@ -56,5 +56,11 @@
   </div>
   <div class="col-xs-12 col-sm-6">
     <pre>{{user | json}}</pre>
+    <p>Validate just like any other angular application, except specifying validation messages for a control wrapped in <code>abmFormGroup</code> directive: </p>
+    <ul>
+      <li>Add a <code>error-messages</code> attribute which points to an object map containing the type of error and error message as key - value pairs</li>
+      <li>Add a <code>error-messages-include</code> which points to a template as mentioned in the <a href="https://docs.angularjs.org/api/ngMessages#reusing-and-overriding-messages" target="_self">documentation</a></li>
+      <li>Inject <code>abmConfig</code> service in your application and provide an error map via it's <code>setErrors</code> method. Note that these will be global for the application</li>
+    </ul>
   </div>
 </div>
