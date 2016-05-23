@@ -9,17 +9,10 @@
         <label data-abm-label>Email</label>
         <input type="email" name="email" class="form-control" placeholder="johndoe@mail.com" abm-form-control ng-model="user.email" required>
       </abm-form-group>
-      <abm-form-group>
-        <label>Prefered notifications via:</label>
-        <div class="checkbox" abm-checkbox label="Text Message">
-          <input type="checkbox" name="notifications" ng-model="user.notifications.text">
+      <div class="form-group">
+        <div class="togglebutton" abm-toggle label="Premium Account">
+          <input type="checkbox" name="premiumAccount" ng-model="user.premium" ng-change="user.paymentMode=undefined">
         </div>
-        <div class="checkbox" abm-checkbox label="Email">
-          <input type="checkbox" name="notifications" ng-model="user.notifications.email">
-        </div>
-      </abm-form-group>
-      <div class="togglebutton" abm-toggle label="Premium Account">
-        <input type="checkbox" name="premiumAccount" ng-model="user.premium" ng-change="user.paymentMode=null">
       </div>
       <abm-form-group error-messages="errorMap">
         <label>Prefered payment method</label>
@@ -30,6 +23,34 @@
           <input type="radio" name="payment" value="credit" ng-model="user.paymentMode" ng-required="user.premium" ng-disabled="!user.premium">
         </div>
       </abm-form-group>
+      <div class="form-group">
+        <div class="togglebutton" abm-toggle label="Send Me Updates">
+          <input type="checkbox" name="notifications" ng-model="user.notify" ng-change="user.notifications={}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <abm-form-group error-messages="errorMap">
+            <label>Notifications via:</label>
+            <div class="checkbox" abm-checkbox label="Text Message">
+              <input type="checkbox" name="text-notifications" ng-model="user.notifications.text" ng-disabled="!user.notify" ng-required="user.notify && !user.notifications.email">
+            </div>
+            <div class="checkbox" abm-checkbox label="Email">
+              <input type="checkbox" name="email-notifications" ng-model="user.notifications.email" ng-disabled="!user.notify" ng-required="user.notify && !user.notifications.text">
+            </div>
+          </abm-form-group>
+        </div>
+        <div class="col-xs-6">
+          <abm-form-group error-messages="errorMap">
+            <label>Notification Frequency:</label>
+            <select class="form-control" name="frequency" abm-form-control ng-model="user.notifications.frequency" ng-disabled="!user.notify" ng-required="user.notify">
+              <option>Daily</option>
+              <option>Weekly</option>
+              <option>Monthly</option>
+            </select>
+          </abm-form-group>
+        </div>
+      </div>
       <a href="" class="btn btn-raised btn-primary" ng-disabled="signup.$invalid" abm-component>Create Account</a>
     </form>
   </div>
