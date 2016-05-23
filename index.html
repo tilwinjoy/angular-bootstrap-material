@@ -113,7 +113,9 @@
       </li>
     </ul>
     <h3>How to install:</h3>
-    <p>Grab the latest source from <a href="https://raw.githubusercontent.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.js" target="_blank">Github</a> and include it in your project after the dependencies. Include <code>angularBootstrapMaterial</code> module in your application:
+    <p> To install via bower, run </p>
+    <pre>bower install abm</pre>
+    <p>or grab the latest source from <a href="https://raw.githubusercontent.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.js" target="_blank">Github</a> and include it in your project after the dependencies. Include <code>angularBootstrapMaterial</code>      module in your application:
     </p>
     <pre>angular.module('app', ['angularBootstrapMaterial']);</pre>
 
@@ -135,7 +137,7 @@
 
         <p>If the <code>input</code> is accompanied by a label, it should contain <code>abmLabel</code> directive. The behaviour of label can be controlled by adding a <code>type</code> attribute whos value can be either "floating" or "static"(default)</p>
         <p>
-          You can control the size of the component by adding the classes "form-group-sm" or "form-group-lg" on the <code>abmFormGroup</code> directive.
+          Control the size of the component by adding the classes "form-group-sm" or "form-group-lg" on the <code>abmFormGroup</code> directive.
         </p>
       </div>
     </div>
@@ -172,7 +174,10 @@
         <h3>Select</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/select/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6"></div>
+      <div class="col-xs-6 description">
+        <p>A simple select does not need any special direcitves. However if it accompanied by a label, or has validation message applied which needs to be highlighted similar to other controls, it should have <code>abmFormControl</code> directive and should
+          be wrapping in <code>abmFormGroup</code> directive.</p>
+      </div>
     </div>
     <div id="form-validation" class="row component">
       <div class="col-xs-12">
