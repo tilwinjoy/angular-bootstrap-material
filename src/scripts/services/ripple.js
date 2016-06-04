@@ -52,8 +52,8 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
        * Make sure the user is using only one finger and then get the touch
        * position relative to the ripple wrapper
        */
-      event = event.originalEvent;
-
+      if (event.originalEvent) // Do this only if jQuery is present for some reason
+        event = event.originalEvent
       if (event.touches.length === 1) {
         return event.touches[0].pageX - wrapperOffset.left;
       }
@@ -79,7 +79,8 @@ angular.module('angularBootstrapMaterial').factory('ripple', function () {
        * Make sure the user is using only one finger and then get the touch
        * position relative to the ripple wrapper
        */
-      event = event.originalEvent;
+      if (event.originalEvent) // Do this only if jQuery is present for some reason
+        event = event.originalEvent
 
       if (event.touches.length === 1) {
         return event.touches[0].pageY - wrapperOffset.top;
