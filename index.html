@@ -105,7 +105,7 @@
     <ul class="list-group">
       <li class="list-group-item"><a href="http://angularjs.org" target="_blank">AngularJS</a></li>
       <li class="list-group-item"><a href="http://angularjs.org" target="_blank">Angular-messages</a></li>
-      <li class="list-group-item"><a href="https://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a> (Optional: required for using bootstap's JavaScript components)
+      <li class="list-group-item"><a href="https://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap and dependencies</a> (Optional: required for using bootstap's JavaScript components)
       </li>
       <li class="list-group-item"><a href="http://getbootstrap.com" target="_blank">Bootstrap CSS</a> (tested with version 3.3.6)
       </li>
@@ -115,7 +115,7 @@
     <h3>How to install:</h3>
     <p> To install via bower, run </p>
     <pre>bower install abm</pre>
-    <p>or grab the latest source from <a href="https://raw.githubusercontent.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.js" target="_blank">Github</a> and include it in your project after the dependencies. Include <code>angularBootstrapMaterial</code>      module in your application:
+    <p>or grab the latest source from <a href="https://raw.githubusercontent.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.js" target="_blank">Github</a> and include it in your project after the dependencies. Include <code>angularBootstrapMaterial</code> module in your application:
     </p>
     <pre>angular.module('app', ['angularBootstrapMaterial']);</pre>
 
@@ -175,8 +175,7 @@
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/select/demo.html'"></ng-include>
       </div>
       <div class="col-xs-6 description">
-        <p>A simple select does not need any special direcitves. However if it accompanied by a label, or has validation message applied which needs to be highlighted similar to other controls, it should have <code>abmFormControl</code> directive and should
-          be wrapping in <code>abmFormGroup</code> directive.</p>
+        <p>A simple select does not need any special direcitves. However if it accompanied by a label, or has validation message applied which needs to be highlighted similar to other controls, it should have <code>abmFormControl</code> directive and should be wrapping in <code>abmFormGroup</code> directive.</p>
       </div>
     </div>
     <div id="form-validation" class="row component">
@@ -197,10 +196,20 @@
       </div>
     </div>
 
-    <div id="navbar" class="row component">
-      <div class="col-xs-12">
-        <h3>Navbar</h3>
-        <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/navbar/demo.html'"></ng-include>
+    <div id="navbar" class="component">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Navbar</h3>
+          <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/navbar/demo.html'"></ng-include>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 description">
+          <p>Narbar requires <a href="https://angular-ui.github.io/bootstrap/#/collapse">uib-collapse</a> directive. Include it in the collapse section (<code>.navbar-collapse</code>) like:</p>
+          <pre>&lt;div class="navbar-collapse collapse" uib-collapse="isCollapsed"&gt;</pre>
+          <p>and toggle the state on click of toggle button <code>.navbar-toggle</code>: </p>
+          <pre>&lt;button type="button" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar" ng-click="isCollapsed=!isCollapsed"&gt;</pre>
+        </div>
       </div>
     </div>
     <div id="buttons" class="row component">
@@ -283,6 +292,7 @@
   <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/dist/angular-bootstrap-material.min.js"></script>
   <script src="scripts/index.js"></script>
 
+  <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/navbar/demo.js"></script>
   <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/alert/demo.js"></script>
   <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/buttons/demo.js"></script>
   <script src="https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/dropdown/demo.js"></script>
