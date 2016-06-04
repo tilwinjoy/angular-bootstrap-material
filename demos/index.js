@@ -1,1 +1,1 @@
-angular.module('angularBootstrapMaterialDocs', ['angularBootstrapMaterial', 'ui.bootstrap']);
+angular.module('angularBootstrapMaterialDocs', ['angularBootstrapMaterial', 'ngAnimate', 'ui.bootstrap']);
