@@ -22,7 +22,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- Bootstrap Material Design -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/css/bootstrap-material-design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/css/ripples.min.css">
   <!-- custom -->
   <link rel="stylesheet" href="css/index.css">
@@ -128,11 +128,11 @@
   <div id="form-controls" class="container-fluid">
     <h2>Form controls</h2>
     <div id="input" class="row component">
-      <div class="col-xs-6 demo">
+      <div class="col-xs-12 col-md-6 demo">
         <h3>Input</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/input/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6 description">
+      <div class="col-xs-12 col-md-6 description">
         <p>Create a material design input by adding <code>abmFormControl</code> directive to an <code>input</code> element and wrapping it in <code>abmFormGroup</code> directive.</p>
 
         <p>If the <code>input</code> is accompanied by a label, it should contain <code>abmLabel</code> directive. The behaviour of label can be controlled by adding a <code>type</code> attribute whos value can be either "floating" or "static"(default)</p>
@@ -142,39 +142,39 @@
       </div>
     </div>
     <div id="textarea" class="row component">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-md-6">
         <h3>Textarea</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/textarea/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6 description">
+      <div class="col-xs-12 col-md-6 description">
         <p>Creating a material design textarea the same as creating an input, except that <code>abmFormControl</code> directive should be added to a <code>textarea</code> element.
       </div>
     </div>
     <div id="checkbox" class="row component">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-md-6">
         <h3>Checkbox</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/checkbox/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6 description">
+      <div class="col-xs-12 col-md-6 description">
         <p>Create a material design checkbox by adding <code>abmCheckbox</code> directive to the checkbox input's wrapper. Add a <code>label</code> property on it to specify it's label</p>
         <p>Create a checkbox group by simply wrapping the checkboxes in a <code>abmFormGroup</code> directive</p>
       </div>
     </div>
     <div id="radio" class="row component">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-md-6">
         <h3>Radio</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/radio/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6 description">
+      <div class="col-xs-12 col-md-6 description">
         <p>Creating a material design radio or radio group is similar to creating a checkbox or checkbox group, except that <code>abmRadio</code> directive needs to be added to the radio input's wrapper.
       </div>
     </div>
     <div id="select" class="row component">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-md-6">
         <h3>Select</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/select/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6 description">
+      <div class="col-xs-12 col-md-6 description">
         <p>A simple select does not need any special direcitves. However if it accompanied by a label, or has validation message applied which needs to be highlighted similar to other controls, it should have <code>abmFormControl</code> directive and should be wrapping in <code>abmFormGroup</code> directive.</p>
       </div>
     </div>
@@ -276,11 +276,11 @@
   </div>
   <div id="material-components" class="container-fluid">
     <div id="toggle" class="row component">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-md-6">
         <h3>Toggle Button</h3>
         <ng-include src="'https://rawgit.com/tilwinjoy/angular-bootstrap-material/master/demos/toggle/demo.html'"></ng-include>
       </div>
-      <div class="col-xs-6 description">
+      <div class="col-xs-12 col-md-6 description">
         <p>Create a material design toggle button by adding <code>abmtoggle</code> directive to the checkbox input's wrapper. Add a <code>label</code> property on it to specify it's label</p>
       </div>
     </div>
