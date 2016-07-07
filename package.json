@@ -1,7 +1,7 @@
 {
   "name": "angular-bootstrap-material",
   "version": "0.1.2",
-  "description": "angularJS directives for creating material design style bootstrap components",
+  "description": "AngularJS directives for creating material design style Bootstrap components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/tilwinjoy/angular-bootstrap-material/issues"
   },
-  "homepage": "https://github.com/tilwinjoy/angular-bootstrap-material#readme",
+  "homepage": "http://tilwinjoy.github.io/angular-bootstrap-material/",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^1.8.0",
