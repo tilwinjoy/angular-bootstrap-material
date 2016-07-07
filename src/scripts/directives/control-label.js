@@ -5,7 +5,7 @@ angular.module('angularBootstrapMaterial')
     replace: true,*/
       require: '^abmFormGroup',
       scope: {
-        type: '='
+        type: '@'
       },
       link: function (scope, element, attrs, formGroupCtrl) {
         if (!formGroupCtrl) // if used outside a form group for some reason, do nothing
