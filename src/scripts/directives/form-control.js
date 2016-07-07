@@ -21,7 +21,7 @@ angular.module('angularBootstrapMaterial')
             })
             .on('blur', function () {
               formGroup.toggleFocus(false);
-              formGroup.toggleEmpty($element.val());
+              formGroup.toggleEmpty(!$element.val());
             });
 
           $scope.$watch(function () {
