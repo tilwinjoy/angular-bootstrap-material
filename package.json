@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-material",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "angularJS directives for creating material design style bootstrap components",
   "main": "index.js",
   "scripts": {
