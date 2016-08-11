@@ -147,14 +147,20 @@ angular.module('angularBootstrapMaterial')
       templateUrl: 'templates/form-group.html',
       controller: ['$scope', '$element', function ($scope, $element) {
         $scope.errorMessageMap = {};
-        $scope.showErrors = abmConfig.getErrorState() && $scope.errorMessages !== false;
-        if ($scope.showErrors) {
-          var globalErrors = abmConfig.getErrors() || {};
-          if ($scope.errorMessages instanceof Object)
-            angular.extend($scope.errorMessageMap, globalErrors, $scope.errorMessages);
-          else
-            angular.extend($scope.errorMessageMap, globalErrors);
+
+        function updateErrorMessages() {
+          $scope.showErrors = abmConfig.getErrorState() && $scope.errorMessages !== false;
+          if ($scope.showErrors) {
+            var globalErrors = abmConfig.getErrors() || {};
+            if ($scope.errorMessages instanceof Object)
+              angular.extend($scope.errorMessageMap, globalErrors, $scope.errorMessages);
+            else
+              angular.extend($scope.errorMessageMap, globalErrors);
+          }
         }
+
+        $scope.$watch('errorMessages', updateErrorMessages);
+
         this.toggleFocus = function (state) {
           $element.toggleClass("is-focused", state);
         };
