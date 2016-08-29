@@ -1,7 +1,7 @@
 {
   "name": "angular-bootstrap-material",
   "description": "AngularJS directives for creating material design style Bootstrap components",
-  "main": "",
+  "main": "dist/angular-bootstrap-material.js",
   "moduleType": [],
   "authors": [
     "Tilwin Joy"
