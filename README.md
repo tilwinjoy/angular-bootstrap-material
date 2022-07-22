@@ -13,7 +13,7 @@ This project is an AngularJS version of the aswesome [Bootstrap material design]
 - [Angular-messages](http://angularjs.org)
 - [UI Bootstrap](https://angular-ui.github.io/bootstrap/) (Optional: required for supporting bootstrap's JavaScript components)
 - [Bootstrap CSS](http://getbootstrap.com") (tested with version 3.3.6)
-- [Bootstrap Material Design CSS components](http://fezvrasta.github.io/bootstrap-material-design/) (bootstrap-material-design.css and ripples.css)
+- [Bootstrap Material Design CSS components](https://mdbootstrap.com/) (bootstrap-material-design.css and ripples.css)
 
 ###How to install:
 
